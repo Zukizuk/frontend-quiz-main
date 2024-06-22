@@ -3,7 +3,7 @@ import React from "react";
 
 export default function Page({ params }: { params: { subject: string } }) {
   return (
-    <div>
+    <main>
       <div>
         <span>Question 6 of 10</span>
         <h1>
@@ -28,6 +28,6 @@ export default function Page({ params }: { params: { subject: string } }) {
         </ul>
         <Button>Submit Answer</Button>
       </div>
-    </div>
+    </main>
   );
 }

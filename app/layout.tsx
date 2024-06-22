@@ -19,7 +19,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={rubik.className}>
+      <body
+        className={`${rubik.className} bg-blue-like-light dark:bg-medium-dark patterns`}
+      >
         <ThemeProvider>
           <Header />
           {children}
