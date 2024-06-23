@@ -71,14 +71,32 @@
     @apply border-border;
   }
   body {
-    @apply flex min-h-svh flex-col bg-background text-foreground;
+    @apply flex min-h-svh flex-col bg-background leading-normal text-foreground;
   }
 
   main {
-    @apply flex flex-col;
+    @apply flex flex-col px-6 pt-8 lg:px-[8.75rem];
+  }
+}
+
+@layer utilities {
+  .flex-center {
+    @apply flex items-center justify-center;
+  }
+
+  .flex-between {
+    @apply flex items-center justify-between;
+  }
+
+  .flex-start {
+    @apply flex items-center justify-start;
   }
 }
 
 .patterns {
-  @apply bg-[url('/assets/images/pattern-background-mobile-light.svg')] bg-cover bg-center bg-no-repeat dark:bg-[url('/assets/images/pattern-background-mobile-dark.svg')] md:bg-[url('/assets/images/pattern-background-tablet-light.svg')] dark:md:bg-[url('/assets/images/pattern-background-tablet-dark.svg')] lg:bg-[url('/assets/images/pattern-background-desktop-light.svg')] dark:lg:bg-[url('/assets/images/pattern-background-desktop-dark.svg')];
+  @apply bg-[url('/assets/images/pattern-background-mobile-light.svg')] bg-cover bg-top bg-no-repeat dark:bg-[url('/assets/images/pattern-background-mobile-dark.svg')] md:bg-[url('/assets/images/pattern-background-tablet-light.svg')] dark:md:bg-[url('/assets/images/pattern-background-tablet-dark.svg')] lg:bg-[url('/assets/images/pattern-background-desktop-light.svg')] dark:lg:bg-[url('/assets/images/pattern-background-desktop-dark.svg')];
+}
+
+.subject-item {
+  @apply flex items-center gap-4 rounded-[12px] bg-blue-like-light p-3 dark:bg-medium-dark;
 }

@@ -18,13 +18,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
-        className={`${rubik.className} bg-blue-like-light dark:bg-medium-dark patterns`}
+        className={`${rubik.className} patterns bg-blue-like-light dark:bg-medium-dark`}
       >
         <ThemeProvider>
           <Header />
-          {children}
+          <main>{children}</main>
         </ThemeProvider>
       </body>
     </html>
