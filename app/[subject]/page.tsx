@@ -1,12 +1,18 @@
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
-import { cn, getSubjectColor } from "@/lib/utils";
+import { getSubjectColor } from "@/lib/actions/colors";
+import { cn } from "@/lib/utils";
 import Image from "next/image";
 import React from "react";
 
-export default function Page({ params }: { params: { subject: string } }) {
-  const result = false;
-  const subjectColor = getSubjectColor(params.subject);
+export default async function Page({
+  params,
+}: {
+  params: { subject: string };
+}) {
+  const result = true;
+  const subjectColor = await getSubjectColor(params.subject);
+
   return (
     <article className="flex flex-col gap-10 pb-[8.375rem] dark:text-white">
       {result ? (
