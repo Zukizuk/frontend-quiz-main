@@ -5,7 +5,7 @@
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --foreground: 216, 25%, 25%;
 
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
@@ -71,7 +71,7 @@
     @apply border-border;
   }
   body {
-    @apply flex min-h-svh flex-col bg-background leading-normal text-foreground;
+    @apply flex min-h-svh flex-col bg-background leading-normal text-foreground dark:text-deep-dark;
   }
 
   main {
@@ -98,5 +98,9 @@
 }
 
 .subject-item {
-  @apply flex items-center gap-4 rounded-[12px] bg-blue-like-light p-3 dark:bg-medium-dark;
+  @apply flex items-center gap-4 rounded-[12px] bg-white p-3 text-lg font-medium dark:bg-medium-dark;
+}
+
+.subject-item__options {
+  @apply flex-center size-10 rounded-[6px] bg-blue-like-light p-1 uppercase leading-normal text-medium-dark;
 }
