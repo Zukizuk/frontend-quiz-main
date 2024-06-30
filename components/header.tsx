@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import React from "react";
 import { Switch } from "./ui/switch";
 import { useTheme } from "@/context/ThemeProvider";
-import { cn, getSubjectColor } from "@/lib/utils";
+import { cn } from "@/lib/utils";
 
 export default function Header() {
   const pathname = usePathname();
@@ -37,13 +37,13 @@ export default function Header() {
 
   return (
     <header>
-      <div className="flex-between px-6 py-4 lg:px-[8.75rem] lg:py-[6.125rem]">
+      <div className="flex-between px-6 py-4 md:px-16 md:py-[3.375rem] lg:px-[8.75rem] lg:py-[6.125rem]">
         <div className="h-10 w-[10.438rem]">
           {subject && (
-            <div className="flex-start gap-4">
+            <div className="flex-start gap-4 md:gap-6">
               <div
                 className={cn(
-                  `grid size-10 place-items-center rounded-md p-1`,
+                  `grid size-10 flex-shrink-0 place-items-center rounded-md p-1 md:size-14`,
                   subjectColor,
                 )}
               >
@@ -56,7 +56,7 @@ export default function Header() {
               </div>
               <span
                 className={cn(
-                  "text-[18px] font-medium dark:text-white",
+                  "text-[18px] font-medium leading-[28px] dark:text-white md:text-[28px]",
                   subject.toLowerCase() === "html" ||
                     subject.toLowerCase() === "css"
                     ? "uppercase"
@@ -74,11 +74,12 @@ export default function Header() {
             width={16}
             height={16}
             alt="Sun"
+            className="md:size-6"
           />
           <Switch
             onClick={handleTheme}
-            className="h-5 w-8 !bg-purple-like lg:h-[28px] lg:w-[48px]"
-            thumbClassName="!bg-white h-3 w-3 lg:h-[20px] lg:w-[20px]"
+            className="h-5 w-8 !bg-purple-like md:h-7 md:w-12 lg:h-[28px] lg:w-[48px]"
+            thumbClassName="!bg-white h-3 w-3 md:h-[20px] md:w-[20px]"
             checked={mode === "dark"}
           />
           <Image
@@ -86,6 +87,7 @@ export default function Header() {
             width={16}
             height={16}
             alt="Sun"
+            className="md:size-6"
           />
         </div>
       </div>

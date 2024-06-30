@@ -75,7 +75,7 @@
   }
 
   main {
-    @apply flex flex-col px-6 pt-8 lg:px-[8.75rem];
+    @apply flex flex-col px-6 max-sm:pt-8 md:px-16 lg:px-[8.75rem];
   }
 }
 
@@ -94,13 +94,13 @@
 }
 
 .patterns {
-  @apply bg-[url('/assets/images/pattern-background-mobile-light.svg')] bg-cover bg-top bg-no-repeat dark:bg-[url('/assets/images/pattern-background-mobile-dark.svg')] md:bg-[url('/assets/images/pattern-background-tablet-light.svg')] dark:md:bg-[url('/assets/images/pattern-background-tablet-dark.svg')] lg:bg-[url('/assets/images/pattern-background-desktop-light.svg')] dark:lg:bg-[url('/assets/images/pattern-background-desktop-dark.svg')];
+  @apply bg-[url('/assets/images/pattern-background-mobile-light.svg')] bg-cover bg-top bg-no-repeat dark:bg-[url('/assets/images/pattern-background-mobile-dark.svg')] md:bg-[url('/assets/images/pattern-background-tablet-light.svg')] md:bg-auto md:bg-left-top dark:md:bg-[url('/assets/images/pattern-background-tablet-dark.svg')] lg:bg-[url('/assets/images/pattern-background-desktop-light.svg')] dark:lg:bg-[url('/assets/images/pattern-background-desktop-dark.svg')];
 }
 
 .subject-item {
-  @apply flex items-center gap-4 rounded-[12px] bg-white p-3 text-lg font-medium dark:bg-medium-dark;
+  @apply flex items-center gap-4 rounded-[12px] bg-white p-3 text-lg font-medium dark:bg-medium-dark md:gap-8 md:rounded-[24px];
 }
 
 .subject-item__options {
-  @apply flex-center size-10 rounded-[6px] bg-blue-like-light p-1 uppercase leading-normal text-medium-dark;
+  @apply flex-center size-10 rounded-[6px] bg-blue-like-light p-1 uppercase leading-normal text-medium-dark md:size-14;
 }
