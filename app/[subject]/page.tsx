@@ -17,7 +17,7 @@ export default async function Page({
   const subjectColor = await getSubjectColor(params.subject);
 
   return (
-    <article className="flex flex-col gap-10 pb-[8.375rem] dark:text-white md:gap-16">
+    <article className="flex flex-col gap-10 pb-[8.375rem] dark:text-white md:gap-16 lg:flex-row lg:justify-between">
       <Quiz quiz={quiz} subjectColor={subjectColor} subject={params.subject} />
     </article>
   );

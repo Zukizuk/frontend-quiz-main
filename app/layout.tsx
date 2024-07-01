@@ -24,7 +24,7 @@ export default function RootLayout({
       >
         <ThemeProvider>
           <Header />
-          <main>{children}</main>
+          <main id="test">{children}</main>
         </ThemeProvider>
       </body>
     </html>

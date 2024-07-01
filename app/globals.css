@@ -98,7 +98,7 @@
 }
 
 .subject-item {
-  @apply flex items-center gap-4 rounded-[12px] bg-white p-3 text-lg font-medium dark:bg-medium-dark md:gap-8 md:rounded-[24px];
+  @apply flex items-center gap-4 rounded-[12px] bg-white p-3 text-lg font-medium dark:bg-medium-dark md:gap-8 md:rounded-[24px] lg:w-[35.25rem] lg:p-5 lg:text-[28px];
 }
 
 .subject-item__options {

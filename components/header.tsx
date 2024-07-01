@@ -37,7 +37,7 @@ export default function Header() {
 
   return (
     <header>
-      <div className="flex-between px-6 py-4 md:px-16 md:py-[3.375rem] lg:px-[8.75rem] lg:py-[6.125rem]">
+      <div className="flex-between px-6 py-4 md:px-16 md:py-[3.375rem] lg:px-[8.75rem] lg:py-[6.063rem] lg:pb-[5.438rem]">
         <div className="h-10 w-[10.438rem]">
           {subject && (
             <div className="flex-start gap-4 md:gap-6">

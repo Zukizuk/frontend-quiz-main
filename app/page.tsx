@@ -6,16 +6,17 @@ export default async function Home() {
   const subjects = await getSubjectTitles();
 
   return (
-    <div className="flex flex-col gap-10 dark:text-white md:gap-16">
-      <div className="flex flex-col gap-4">
-        <h1 className="flex flex-col gap-2 text-[40px] font-light leading-9 md:text-[64px] md:leading-[64px]">
-          Welcome to the <span className="font-medium">Frontend Quiz!</span>
+    <div className="mb-[15.75rem] flex flex-col gap-10 dark:text-white md:mb-[241px] md:gap-16 lg:mb-[280px] lg:flex-row lg:justify-between">
+      <div className="flex flex-col gap-4 lg:gap-12">
+        <h1 className="flex flex-col gap-2 text-[40px] font-light leading-9 md:text-[64px] md:font-normal md:leading-[64px]">
+          Welcome to the{" "}
+          <span className="font-medium md:font-bold">Frontend Quiz!</span>
         </h1>
         <p className="text-sm italic leading-[150%] text-light-dark dark:text-blue-like md:text-[20px]">
           Pick a subject to get started.
         </p>
       </div>
-      <ul className="mb-[15.75rem] flex flex-col gap-3 md:mb-[241px] md:gap-6">
+      <ul className="flex flex-col gap-3 md:gap-6">
         {subjects.map(async (subject) => {
           const subjectColor = await getSubjectColor(subject);
           return (

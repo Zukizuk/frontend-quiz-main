@@ -28,7 +28,6 @@ export default function Quiz({
   subject: string;
 }) {
   const optionLabels = ["A", "B", "C", "D"];
-  const router = useRouter();
   const [currentQuestion, setCurrentQuestion] = React.useState(0);
   const [score, setScore] = React.useState(0);
   const [locked, setLocked] = React.useState(false);
@@ -37,14 +36,19 @@ export default function Quiz({
     null,
   );
   const [isSubmitted, setIsSubmitted] = React.useState(false);
+  const [showError, setShowError] = React.useState(false);
 
   const handleChoice = (choice: string) => {
     if (locked) return;
+    setShowError(false);
     setSelectedAnswer(choice);
   };
 
   const handleSubmit = () => {
-    if (selectedAnswer === null) return;
+    if (selectedAnswer === null) {
+      setShowError(true);
+      return;
+    }
     setIsSubmitted(true);
     setLocked(true);
   };
@@ -76,7 +80,7 @@ export default function Quiz({
               </strong>
             </h2>
           </div>
-          <div className="flex flex-col gap-4 md:gap-8">
+          <div className="flex flex-col gap-4 md:gap-8 lg:w-[35.25rem]">
             <div className="flex flex-col items-center gap-4 rounded-[12px] bg-white p-8 shadow-lg dark:bg-medium-dark md:gap-10 md:p-12">
               <p className="flex items-center gap-4">
                 <span
@@ -118,7 +122,7 @@ export default function Quiz({
         </>
       ) : (
         <>
-          <section className="flex flex-col gap-6 md:gap-10">
+          <section className="flex flex-col gap-6 md:gap-10 lg:justify-between lg:pb-[7.625rem]">
             <div className="flex flex-col gap-3">
               <span className="text-sm italic leading-[150%] text-medium-dark dark:text-blue-like md:text-[20px]">
                 Question {currentQuestion + 1} of {quiz.questions.length}
@@ -133,7 +137,7 @@ export default function Quiz({
               indicatorClass="h-[50%] rounded-full bg-purple-like"
             />
           </section>
-          <section className="flex flex-col gap-3 md:gap-8">
+          <section className="relative flex flex-col gap-3 md:gap-8">
             <ul className="flex flex-col gap-3 md:gap-6">
               <h2 className="sr-only">Options</h2>
               {quiz.questions[currentQuestion].options.map((option, index) => {
@@ -182,14 +186,14 @@ export default function Quiz({
                     <p className="flex-1 text-sm leading-[100%] md:text-[20px]">
                       {option}
                     </p>
-                    <div className="grid size-8 place-items-center">
+                    <div className="grid size-8 place-items-center md:size-10">
                       {locked && (isCorrect || isSelected) && (
                         <Image
                           src={`/assets/images/icon-${isCorrect ? "correct" : "incorrect"}.svg`}
                           height={24}
                           width={24}
                           alt={isCorrect ? "Correct" : "Incorrect"}
-                          className="transition-opacity"
+                          className="w-full transition-opacity"
                         />
                       )}
                     </div>
@@ -207,6 +211,18 @@ export default function Quiz({
                   : "Finish Quiz"
                 : "Submit Answer"}
             </Button>
+            {showError && (
+              <p className="absolute -bottom-14 left-1/2 flex -translate-x-1/2 items-center justify-center text-nowrap text-lg leading-[120%] text-red-like dark:text-white lg:text-[24px]">
+                <Image
+                  src="/assets/images/icon-error.svg"
+                  alt="Incorrect"
+                  height={32}
+                  width={32}
+                  className="lg:size-10"
+                />{" "}
+                Please select an answer
+              </p>
+            )}
           </section>
         </>
       )}
